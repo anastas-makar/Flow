@@ -61,10 +61,7 @@ fun BoxScope.BottomCalendar(horizontalScrollState: LazyListState,
         }
 
         if (isGridCalendarVisible.value) {
-            GridCalendar(
-                horizontalScrollState = horizontalScrollState,
-                verticalScrollState = verticalScrollState
-            )
+            GridCalendar()
         }
     }
 

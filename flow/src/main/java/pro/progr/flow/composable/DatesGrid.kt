@@ -18,12 +18,12 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import pro.progr.flow.calendarViewModel
+import pro.progr.flow.datesGridViewModel
 import pro.progr.flow.getIndex
 import pro.progr.flow.model.CalendarDay
-import pro.progr.flow.util.Scroller
 
 @Composable
-fun DatesGrid(verticalScrollState: LazyListState,  horizontalScrollState: LazyListState) {
+fun DatesGrid() {
     LazyVerticalGrid(
         columns = GridCells.Fixed(count = 7),
         modifier = Modifier
@@ -42,7 +42,7 @@ fun DatesGrid(verticalScrollState: LazyListState,  horizontalScrollState: LazyLi
                                 null,
                     onClick = {
                         calendarViewModel.updateDayOfMonth(item.dayNumber)
-                        Scroller.scroll(verticalScrollState, horizontalScrollState, getIndex(item.localDate))
+                        datesGridViewModel.selectIndex(getIndex(item.localDate))
                     }
                 ) {
                     Text(text = AnnotatedString(item.dayNumber.toString()),

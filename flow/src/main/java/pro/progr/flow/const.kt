@@ -2,6 +2,7 @@ package pro.progr.flow
 
 import pro.progr.flow.model.DateFlow
 import pro.progr.flow.vm.CalendarViewModel
+import pro.progr.flow.vm.DatesGridViewModel
 import java.time.LocalDate
 import java.time.temporal.ChronoUnit
 
@@ -11,6 +12,7 @@ const val START_POSITION = CALENDAR_INITIAL_LOAD_SIZE/2
 val startDate = LocalDate.now()
 val dateFlow = DateFlow()
 val calendarViewModel = CalendarViewModel()
+val datesGridViewModel = DatesGridViewModel()
 
 //todo: найти startDate и всем этим методам достойное место
 

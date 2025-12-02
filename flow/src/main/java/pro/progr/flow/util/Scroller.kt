@@ -5,6 +5,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
+import pro.progr.flow.model.Index
 
 class Scroller {
 
@@ -13,11 +14,11 @@ class Scroller {
         val scrollParentJob = Job()
         val scrollCoroutineScope = CoroutineScope(Dispatchers.Main + scrollParentJob)
 
-        fun scroll(verticalScrollState: LazyListState, horizontalScrollState: LazyListState, index : Int) {
+        fun scroll(verticalScrollState: LazyListState, horizontalScrollState: LazyListState, index : Index) {
 
             scrollCoroutineScope.launch {
-                verticalScrollState.scrollToItem(index)
-                horizontalScrollState.scrollToItem(index)
+                verticalScrollState.scrollToItem(index.index)
+                horizontalScrollState.scrollToItem(index.index)
             }
         }
     }

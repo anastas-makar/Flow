@@ -2,15 +2,14 @@ package pro.progr.flow.composable
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import pro.progr.flow.vm.CalendarViewModel
 
 @Composable
-fun GridCalendar(horizontalScrollState: LazyListState,
-                 verticalScrollState: LazyListState) {
+fun GridCalendar(calendarViewModel: CalendarViewModel) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -18,8 +17,8 @@ fun GridCalendar(horizontalScrollState: LazyListState,
             .padding(0.dp)
             .background(Color.White),
     ) {
-        MonthAndYearPanel()
+        MonthAndYearPanel(calendarViewModel)
         DaysOfWeekPanel()
-        DatesGrid(verticalScrollState, horizontalScrollState)
+        DatesGrid(calendarViewModel)
     }
 }

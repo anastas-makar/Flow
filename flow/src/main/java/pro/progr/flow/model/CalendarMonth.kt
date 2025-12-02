@@ -1,5 +1,6 @@
 package pro.progr.flow.model
 
+import java.time.DayOfWeek
 import java.time.LocalDate
 import java.time.format.TextStyle
 import java.util.*
@@ -19,7 +20,7 @@ class CalendarMonth(displayDate: LocalDate, private val selectedDate : LocalDate
     }
 
     private fun getEmptyDatesSize() : Int {
-        return if (calendarDate.dayOfWeek.value > 1) calendarDate.dayOfWeek.value - 2 else 6
+        return calendarDate.dayOfWeek.value - DayOfWeek.MONDAY.value
     }
 
     private fun getMonthDays() : MutableList<CalendarDay?> {

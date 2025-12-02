@@ -21,10 +21,10 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import pro.progr.flow.R
-import pro.progr.flow.calendarViewModel
+import pro.progr.flow.vm.CalendarViewModel
 
 @Composable
-fun EditYear(editYear: MutableState<Boolean>) {
+fun EditYear(editYear: MutableState<Boolean>, calendarViewModel: CalendarViewModel) {
     val newYear = rememberSaveable { mutableStateOf(calendarViewModel.calendarPage.value.yearName) }
 
     TextField(

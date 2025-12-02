@@ -9,10 +9,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.ui.res.stringResource
 import pro.progr.flow.R
-import pro.progr.flow.calendarViewModel
+import pro.progr.flow.vm.CalendarViewModel
 
 @Composable
-fun ShowYear(editYear: MutableState<Boolean>) {
+fun ShowYear(editYear: MutableState<Boolean>, calendarViewModel: CalendarViewModel) {
     Text(text = calendarViewModel.calendarPage.value.yearName)
 
     IconButton(

@@ -7,9 +7,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import pro.progr.flow.vm.CalendarViewModel
 
 @Composable
-fun MonthAndYearPanel() {
+fun MonthAndYearPanel(calendarViewModel: CalendarViewModel) {
     val editYear = remember { mutableStateOf(false) }
 
     Row(
@@ -18,12 +19,12 @@ fun MonthAndYearPanel() {
         modifier = Modifier.fillMaxWidth()
     ) {
 
-        ChangeMonth()
+        ChangeMonth(calendarViewModel)
 
         if (editYear.value) {
-            EditYear(editYear = editYear)
+            EditYear(editYear = editYear, calendarViewModel = calendarViewModel)
         } else {
-            ShowYear(editYear = editYear)
+            ShowYear(editYear = editYear, calendarViewModel = calendarViewModel)
         }
 
         Spacer(modifier = Modifier.width(8.dp))

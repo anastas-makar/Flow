@@ -15,10 +15,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import pro.progr.flow.R
-import pro.progr.flow.calendarViewModel
+import pro.progr.flow.vm.CalendarViewModel
 
 @Composable
-fun ChangeMonth() {
+fun ChangeMonth(calendarViewModel: CalendarViewModel) {
     IconButton(
         onClick = { calendarViewModel.monthBefore() }
     ) {

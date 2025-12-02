@@ -10,6 +10,6 @@ class CalendarDay(
     val selected : Boolean = false) {
     val isWeekend : Boolean
         get() {
-            return (dayOfWeek == 1 || dayOfWeek == 7)
+            return (dayOfWeek > 5)
         }
 }
